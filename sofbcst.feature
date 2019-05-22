@@ -9,3 +9,9 @@ Feature: sofbcst
     Then Customer receives the order number
     And an mail is generated for confirmation
     
+
+  @ORPHAN
+  Scenario: move order state to allocated
+    Given Customer receives the order number
+    When Coworker allocate the article for order
+    Then Coworker change the order state to allocated
